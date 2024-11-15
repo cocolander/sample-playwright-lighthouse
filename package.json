@@ -1,0 +1,22 @@
+{
+  "name": "sample-playwright-lighthouse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.8.7"
+  },
+  "dependencies": {
+    "@lighthousejs/types": "^0.0.3",
+    "lighthouse": "^12.2.1",
+    "playwright-lighthouse": "^4.0.0"
+  }
+}
