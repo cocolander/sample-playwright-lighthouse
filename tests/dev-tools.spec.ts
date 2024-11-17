@@ -3,11 +3,15 @@ import { expect, test } from '@playwright/test'
 test.describe('Performance Test', () => {
   test('top page', {
   }, async ({ page }) => {
+    // Chromeのdev toolsを使用する
     const client = await page.context().newCDPSession(page)
+    // プロトコルメソッドを使用して呼び出す
     await client.send('Performance.enable')
+    // TOP画面に遷移する
     await page.goto('/')
+    // プロトコルメソッドを使用してメトリクスを呼び出す
     const performanceMetrics = await client.send('Performance.getMetrics')
-
+    // 必要な情報を抽出する
     const getNavigationStart = performanceMetrics.metrics.filter(
       metrics => metrics.name === 'NavigationStart'
     )
