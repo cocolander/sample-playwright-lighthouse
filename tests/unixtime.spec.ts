@@ -15,7 +15,7 @@ test.describe('Performance Test', () => {
     // 描画時間を取得する && ミリ秒を秒単位にする
     const diffViewTime = (endTime - startTime) / 1000
 
-    // 5秒以内であることを確認する
+    // 5秒以下であることを確認する
     expect(diffViewTime).toBeLessThanOrEqual(10)
 
     // テストレポートに計測した描画時間を表示する
